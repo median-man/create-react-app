@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "myt-search",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Search the New York Times API for articles and save articles.",
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
