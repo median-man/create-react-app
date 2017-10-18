@@ -7,7 +7,7 @@ const { Schema } = mongoose;
 // model definition
 const articleSchema = new Schema({
   // title, a string, must be entered
-  headline: {
+  title: {
     type: String,
     required: true,
     unique: { index: { unique: true } },
@@ -24,7 +24,7 @@ const articleSchema = new Schema({
   },
 });
 
-// Create the Headline model using the headlineSchema
+// Create the Article model using the articleSchema
 const Article = mongoose.model('Article', articleSchema);
 
 // Export the Headline model
