@@ -1,6 +1,8 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
 import { Col, Container, Row } from './Grid';
+import { Input } from './Form';
+
 const Main = ({ children }) => (
   <div>
     <Container>
@@ -10,6 +12,12 @@ const Main = ({ children }) => (
           <strong><i className="fa fa-newspaper-o" /> New York Times Search</strong>
         </h1>
       </Jumbotron>
+
+      <form>
+        <Input id="topic" label="Topic:" name="topic" type="text" required />
+        <Input id="startYear" label="Start Year:" name="topic" type="number" />
+        <Input id="endYear" label="End Year:" name="topic" type="number" />
+      </form>
 
       { children }
 
