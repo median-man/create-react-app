@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import Jumbotron from './Jumbotron';
 import { Col, Container, Row } from './Grid';
 import { FormBtn, Input } from './Form';
-import { searchNYT } from '../utils/timesAPI';
+import searchNYT from '../utils/timesAPI';
 
 class Main extends Component {
-  state = {};
+  state = {
+    articles: []
+  };
 
   // handler for change in form inputs
   handleInputChange = event => {
@@ -16,6 +18,13 @@ class Main extends Component {
   // search for articles from nyt
   submitSearch = event => {
     event.preventDefault();
+
+    // query new york times api
+    searchNYT( this.state.topic )
+    // TODO Finish handling data from nyt api
+      .then(data => {
+        this.setState({ articles: data });
+      });
   }
 
   render() {
@@ -57,7 +66,7 @@ class Main extends Component {
               id="btnSearch"
               type="submit"
               disabled={!this.state.topic}
-              onClick={this.searchNYT}
+              onClick={this.submitSearch}
             >
               Search
             </FormBtn>

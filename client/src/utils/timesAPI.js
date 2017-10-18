@@ -10,5 +10,7 @@ export default function searchNYT(searchTerm, startYear = 0, endYear = 0) {
   if (startYear) params.startYear = startYear;
   if (endYear) params.endYear = endYear;
 
-  return axios.get(apiEndpoint, { params });
+  return axios
+    .get(apiEndpoint, { params })
+    .then(response => response.data.response.docs);
 }
