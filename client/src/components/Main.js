@@ -13,6 +13,11 @@ class Main extends Component {
     this.setState({ [name]: value });
   };
 
+  // search for articles from nyt
+  submitSearch = event => {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div>
@@ -52,6 +57,7 @@ class Main extends Component {
               id="btnSearch"
               type="submit"
               disabled={!this.state.searchTopic}
+              onClick={this.searchNYT}
             >
               Search
             </FormBtn>
