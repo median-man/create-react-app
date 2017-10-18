@@ -4,6 +4,14 @@ import { Col, Container, Row } from './Grid';
 import { FormBtn, Input } from './Form';
 
 class Main extends Component {
+  state = {};
+
+  // handler for change in form inputs
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
   render() {
     return (
       <div>
@@ -16,10 +24,36 @@ class Main extends Component {
           </Jumbotron>
     
           <form>
-            <Input id="topic" label="Topic:" name="topic" type="text" required />
-            <Input id="startYear" label="Start Year:" name="topic" type="number" />
-            <Input id="endYear" label="End Year:" name="topic" type="number" />
-            <FormBtn id="btnSearch" type="submit">Search</FormBtn>
+            <Input 
+              id="topic" 
+              label="Topic:" 
+              name="topic" 
+              type="text" 
+              value={this.state.searchTopic}
+              required
+              onChange={this.handleInputChange}
+            />
+            <Input
+              id="startYear"
+              label="Start Year:"
+              name="topic"
+              type="number"
+              onChange={this.handleInputChange}
+            />
+            <Input
+              id="endYear"
+              label="End Year:"
+              name="topic"
+              type="number"
+              onChange={this.handleInputChange}
+            />
+            <FormBtn
+              id="btnSearch"
+              type="submit"
+              disabled={!this.state.searchTopic}
+            >
+              Search
+            </FormBtn>
           </form>
     
           { this.props.children }
