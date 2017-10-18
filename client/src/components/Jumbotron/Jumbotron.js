@@ -2,7 +2,7 @@ import React from 'react';
 
 // css styles applied to jumbotron div
 const jtstyles = {
-  'background-color': '#20315A',
+  backgroundColor: '#20315A',
   color: 'white',
 };
 
