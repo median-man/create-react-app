@@ -56,7 +56,7 @@ class Main extends Component {
             <FormBtn
               id="btnSearch"
               type="submit"
-              disabled={!this.state.searchTopic}
+              disabled={!this.state.topic}
               onClick={this.searchNYT}
             >
               Search
