@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const articles = require('./controllers/articles.js');
+const articles = require('./routes/articles.js');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
