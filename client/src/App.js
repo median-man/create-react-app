@@ -6,12 +6,12 @@ import Saved from './components/Saved';
 
 const App = () => (
   <Router>
-    <Route component={Main}>
+    <Main>
       <Switch>
         <Route exact path="/search" component={Search} />
         <Route exact path="/saved" component={Saved} />
       </Switch>
-    </Route>
+    </Main>
   </Router>
 );
 
