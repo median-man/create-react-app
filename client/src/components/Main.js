@@ -1,9 +1,11 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
 import { Col, Container, Row } from './Grid';
+import Nav from './Nav';
 
 const Main = ({ children }) => (
   <Container>
+    <Nav />
     {/* Page Header */}
     <Jumbotron>
       <h1 className="text-center">
