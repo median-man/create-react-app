@@ -1,7 +1,7 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
 import { Col, Container, Row } from './Grid';
-import { Input } from './Form';
+import { FormBtn, Input } from './Form';
 
 const Main = ({ children }) => (
   <div>
@@ -17,6 +17,7 @@ const Main = ({ children }) => (
         <Input id="topic" label="Topic:" name="topic" type="text" required />
         <Input id="startYear" label="Start Year:" name="topic" type="number" />
         <Input id="endYear" label="End Year:" name="topic" type="number" />
+        <FormBtn id="btnSearch" type="submit">Search</FormBtn>
       </form>
 
       { children }
