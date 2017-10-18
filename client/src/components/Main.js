@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Jumbotron from './Jumbotron';
 import { Col, Container, Row } from './Grid';
 import { FormBtn, Input } from './Form';
+import { searchNYT } from '../utils/timesAPI';
 
 class Main extends Component {
   state = {};
