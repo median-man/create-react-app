@@ -10,6 +10,7 @@ const Main = ({ children }) => (
           <strong><i className="fa fa-newspaper-o" /> New York Times Search</strong>
         </h1>
       </Jumbotron>
+
       { children }
 
       {/* Footer Row */}
