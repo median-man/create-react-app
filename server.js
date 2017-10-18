@@ -1,8 +1,8 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
-const path = require('path');
-const articles = require('./routes/articles.js');
+// const path = require('path');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -14,20 +14,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 app.use(bodyParser.json());
 
-// server routes
+// routing
 // ==========================================================
-
-
-// TODO remove healthceck route
-app.get('/healthcheck', (req, res) => {
-  res.json({ success: true, status: 200 });
-});
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
+app.use(express.static('client/build'));
+app.use(routes);
 
 // Connect to database
 // ==========================================================

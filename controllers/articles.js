@@ -1,10 +1,10 @@
-// router and controller for articles api
+// all server routes
 // =================================================
 const Article = '../models/Article';
 
 module.exports = {
   // Returns a promise for all saved articles
-  getSaved: (req, res) => {
+  all: (req, res) => {
     // TODO define getSaved
   },
 
@@ -12,15 +12,8 @@ module.exports = {
   save: (req, res) => {
     // save title, url, and date properties from request body
     return Article.create(req.body)
-      .then(() => res.send('Article was saved succesfully'))
-      .catch((error) => {
-        res
-          .status(400)
-          .json({
-            message: error.message,
-            error,
-          });
-      });
+      .then(articleModel => res.json(articleModel))
+      .catch(error => res.status(422).json(error));
   },
 
   // Returns a promise to delete an article
