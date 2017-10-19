@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Main from './Main';
-import { FormBtn, Input } from './Form';
-import searchNYT from '../utils/timesAPI';
+import Main from '../Main';
+import { FormBtn, Input } from '../Form';
+import searchNYT from '../../utils/timesAPI';
 
 class Search extends Component {
   constructor(props) {
