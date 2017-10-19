@@ -17,6 +17,10 @@ const articleSchema = new Schema({
     type: String,
     required: true,
   },
+  // date articles was published
+  pub_date: {
+    type: String,
+  },
   // date is just a string
   date: {
     type: Date,
