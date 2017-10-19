@@ -23,9 +23,9 @@ class Search extends Component {
 
   // search for articles from nyt
   submitSearch(event) {
+    // TODO handle passing startYear and endYear inputs to searchNYT call
     event.preventDefault();
     searchNYT(this.state.topic)
-    // TODO Finish handling data from nyt api
       .then((data) => {
         this.setState({ articles: data });
       });
