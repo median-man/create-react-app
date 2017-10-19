@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import articlesAPI from '../../utils/articlesAPI.js'
 
 const css = {
   whiteSpace: 'nowrap',
@@ -12,8 +13,7 @@ class ArticlePanel extends Component {
     console.log('TODO: send delete request for article.', this.props.data);
   }
   saveArticle() {
-    // TODO send POST to /api/saved 
-    console.log('TODO: send post request to save article.', this.props.data);
+    articlesAPI.save(this.props.data);
   }
   render() {
     const { data } = this.props;
