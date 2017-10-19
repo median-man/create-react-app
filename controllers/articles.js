@@ -1,6 +1,6 @@
 // all server routes
 // =================================================
-const Article = '../models/Article';
+const Article = require('../models/Article');
 
 module.exports = {
   // Returns a promise for all saved articles
