@@ -5,7 +5,7 @@ const Article = '../models/Article';
 module.exports = {
   // Returns a promise for all saved articles
   all: (req, res) => {
-    // TODO define getSaved
+    // TODO save article
   },
 
   // Adds article to the database and sends response. Returns promise.
@@ -18,6 +18,6 @@ module.exports = {
 
   // Returns a promise to delete an article
   delete: (req, res) => {
-    // TODO delete
+    // TODO delete article
   },
 };

@@ -28,7 +28,6 @@ class Search extends Component {
     // TODO Finish handling data from nyt api
       .then((data) => {
         this.setState({ articles: data });
-        // console.log(this.state.articles);
       });
   }
   render() {
@@ -37,7 +36,6 @@ class Search extends Component {
     if (this.state.articles.length > 0) {
       articleView = <Articles articles={this.state.articles} />;
     }
-    console.log('articles', this.state.articles);
     return (
       <Main>
         <form>

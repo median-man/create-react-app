@@ -5,6 +5,7 @@ export default function searchNYT(searchTerm, startYear = 0, endYear = 0) {
   const params = {
     'api-key': 'b9f91d369ff59547cd47b931d8cbc56b:0:74623931',
     q: searchTerm,
+    fq: 'type_of_material:("Article")',
   };
 
   if (startYear) params.startYear = startYear;
@@ -12,5 +13,15 @@ export default function searchNYT(searchTerm, startYear = 0, endYear = 0) {
 
   return axios
     .get(apiEndpoint, { params })
-    .then(response => response.data.response.docs);
+    .then((response) => {
+      return response.data.response.docs.map((doc) => {
+        return {
+          headline: doc.headline.main,
+          url: doc.web_url,
+          byLine: doc.byline,
+          snippet: doc.snippet,
+          nytId: doc._id,
+        };
+      });
+    });
 }
