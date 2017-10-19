@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Main from '../Main';
 
-const Saved = () => (
-  <div></div>
-);
-
+class Saved extends Component {
+  render() {
+    return (
+      <Main>
+        Saved Articles
+      </Main>
+    );
+  }
+}
 export default Saved;
