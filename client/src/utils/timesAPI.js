@@ -21,6 +21,7 @@ export default function searchNYT(searchTerm, startYear = 0, endYear = 0) {
           byLine: doc.byline,
           snippet: doc.snippet,
           nytId: doc._id,
+          pub_date: doc.pub_date,
         };
       });
     });
