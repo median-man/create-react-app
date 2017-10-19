@@ -1,10 +1,12 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
 import { Col, Container, Row } from './Grid';
+import Nav from './nav';
 
 
 const Main = props => (
   <div>
+    <Nav />
     <Container>
       {/* Page Header */}
       <Jumbotron>
