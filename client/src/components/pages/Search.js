@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Main from '../Main';
 import { FormBtn, Input } from '../Form';
 import searchNYT from '../../utils/timesAPI';
+import Articles from '../Articles';
 
 class Search extends Component {
   constructor(props) {
@@ -27,9 +28,16 @@ class Search extends Component {
     // TODO Finish handling data from nyt api
       .then((data) => {
         this.setState({ articles: data });
+        // console.log(this.state.articles);
       });
   }
   render() {
+    // only display list of search results if the are articles to show
+    let articleView = null;
+    if (this.state.articles.length > 0) {
+      articleView = <Articles articles={this.state.articles} />;
+    }
+    console.log('articles', this.state.articles);
     return (
       <Main>
         <form>
@@ -67,6 +75,7 @@ class Search extends Component {
             Search
           </FormBtn>
         </form>
+        {articleView}
       </Main>
     );
   }
