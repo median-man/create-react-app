@@ -17,6 +17,7 @@ class ArticlePanel extends Component {
     articlesAPI.save(headline, url, pub_date, snippet).catch(console.log);
   }
   render() {
+    // TODO fix bug where snippet does not render
     const { data } = this.props;
     const { headline, snippet } = data;
     return (
