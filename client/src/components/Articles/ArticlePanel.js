@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import articlesAPI from '../../utils/articlesAPI.js'
+import articlesAPI from '../../utils/articlesAPI.js';
 
 const css = {
   whiteSpace: 'nowrap',
