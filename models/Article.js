@@ -26,6 +26,11 @@ const articleSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  // snippet of text from article
+  snippet: {
+    type: String,
+    required: false,
+  },
 });
 
 // Create the Article model using the articleSchema

@@ -13,8 +13,8 @@ class ArticlePanel extends Component {
     console.log('TODO: send delete request for article.', this.props.data);
   }
   saveArticle() {
-    const { headline, url, pub_date } = this.props.data;
-    articlesAPI.save(headline, url, pub_date).catch(console.log);
+    const { headline, url, pub_date, snippet } = this.props.data;
+    articlesAPI.save(headline, url, pub_date, snippet).catch(console.log);
   }
   render() {
     const { data } = this.props;
